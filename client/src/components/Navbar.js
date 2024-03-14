@@ -1,16 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
+  const [userHash, setUserHash] = useState(null);
+
+  const connect = async () => {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+        setUserHash(accounts[0]);
+      } catch (error) {
+        console.error("Error connecting wallet:", error);
+      }
+    }
+  }
+
   return (
     <div className='navbar'>
-      <div className="logo">
-            Logo
-      </div>
+      <img className="logo" src='./images/typewriter.png' alt='printer'></img>
       <Link to="/About">About Us</Link>
       <Link to="/Articles">Read Articles</Link>
-      <button className='signin-button'>CONNECT WALLET</button>
+      {userHash ? (
+        <span>{userHash}</span>
+      ) : (
+        <Link to="/Articles" onClick={connect} className='signin-button'>CONNECT WALLET</Link>
+      )}
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
