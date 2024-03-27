@@ -46,7 +46,9 @@ const AllArticles = () => {
 
   return (
     <div>
-      <h2>News Articles</h2>
+    <div className="articles-heading-container">
+      <h2 className='articles-heading'>News Articles</h2>
+    </div>
       {articles.map((content) => (
         <div>
           <Link to=''>{content.title}</Link>

@@ -17,15 +17,27 @@ code {
 }
 
 .navbar{
-    background-color: #2E1402   ;
-    height: 80px;
+    background-color: #2E1402;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo{
-    margin-left: 30px;
+    margin-left: 2vw;
+    height: 50px;
+}
+
+.nav-about-us{
+    margin-left: 50vw;
+}
+
+.nav-link{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
 }
 
 .nav-heading{
@@ -51,4 +63,23 @@ code {
     padding: 5px 30px;
     margin-right: 30px;
     font-weight: 500;
+}
+
+.home-top-background{
+    width: 100vw;
+}
+
+.articles-heading-container{
+    background-image: url("images/iphone-background.svg");
+    /* background-size:cover;
+    overflow-x: hidden; */
+    height: 200px;
+}
+
+.articles-heading{
+    
+}
+
+.short-article-holder{
+    padding: 10px 50px;
 }
