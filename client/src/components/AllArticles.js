@@ -25,7 +25,7 @@ const AllArticles = () => {
       }
       const content = await response.json();
       console.log(content)
-      const fullContent = content.description;
+      const fullContent = content.content;
 
       setArticles((prevArticles) => [
         ...prevArticles,
@@ -47,9 +47,11 @@ const AllArticles = () => {
 
   return (
     <div>
-      <h2>News Articles</h2>
+    <div className="articles-heading-container">
+      <h2 className='articles-heading'>News Articles</h2>
+    </div>
       {articles.map((content) => (
-        <div>
+        <div className='short-article-holder'>
           <h3>{content.title}</h3>
           <p>{content.content}</p>
         </div>

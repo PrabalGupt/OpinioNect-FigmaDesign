@@ -18,8 +18,8 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <img className="logo" src='./images/typewriter.png' alt='printer'></img>
-      <Link to="/About">About Us</Link>
-      <Link to="/Articles">Read Articles</Link>
+      <Link className='nav-about-us nav-link' to="/About">About Us</Link>
+      <Link className='nav-read-articles nav-link' to="/Articles">Read Articles</Link>
       {userHash ? (
         <span>{userHash}</span>
       ) : (
