@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {Link} from 'react-router-dom'
 const AllArticles = () => {
   const [hashes, setHashes] = useState([]);
   const [articles, setArticles] = useState([]);
@@ -25,8 +25,7 @@ const AllArticles = () => {
       }
       const content = await response.json();
       console.log(content)
-      const fullContent = content.description;
-
+      const fullContent = content.content;
       setArticles((prevArticles) => [
         ...prevArticles,
         { title: content.title, content: fullContent },
@@ -50,8 +49,8 @@ const AllArticles = () => {
       <h2>News Articles</h2>
       {articles.map((content) => (
         <div>
-          <h3>{content.title}</h3>
-          <p>{content.content}</p>
+          <Link to=''>{content.title}</Link>
+          {/* <p>{content.content}</p> */}
         </div>
       ))}
     </div>

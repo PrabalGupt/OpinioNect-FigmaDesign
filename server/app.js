@@ -219,7 +219,6 @@ app.get('/', (req, res) => {
 app.get('/article/:articleName', (req, res) => {
     res.send('Hello World!')
 })
-
 app.post('/comments', (req, res) => {
     res.send('Hello World!');
 })
